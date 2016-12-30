@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  margin-top: 10px;
+}
+
+/* disable simple form required field asterisk */
+abbr[title='required'] {
+  display: none;
+}
+
+.register-link-div {
+  margin-top: 20px;
+}

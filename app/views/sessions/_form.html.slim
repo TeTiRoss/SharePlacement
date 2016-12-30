@@ -1,0 +1,13 @@
+.row
+  .col-md-6.col-md-offset-3
+    = simple_form_for :login, url: login_path do |f|
+      = f.error_notification
+
+      = f.input :email
+      = f.input :password
+      
+      = f.button :submit, 'Log In'
+      .register-link-div
+        | Don't have account? 
+        = link_to 'Sign Up', new_user_path, class: 'btn btn-info btn-xs'
+      
