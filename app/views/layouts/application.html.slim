@@ -13,7 +13,9 @@ html
   body
     .container-fluid
       .row
-        .col-md-8.col-md-offset-2
+        .col-md-2
+          = render 'shared/sidebar_left'
+        .col-md-8
           .row
             .col-md-6.col-md-offset-3
               = bootstrap_flash

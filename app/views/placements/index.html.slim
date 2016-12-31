@@ -1,0 +1,6 @@
+- if @placements.empty?
+  p No placements
+- else
+  - @placements.each do |placement|
+    = link_to placement.title, placement_path(placement)
+    br

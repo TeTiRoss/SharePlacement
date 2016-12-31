@@ -1,0 +1,9 @@
+- if user_authorized?
+  .panel.panel-primary
+    .panel-heading
+      = current_user.name
+    .panel-body
+      = link_to 'Placements', placements_path,
+        class: 'btn btn-default sidebar-btn'
+      = link_to 'Add placement', new_placement_path,
+        class: 'btn btn-default sidebar-btn'

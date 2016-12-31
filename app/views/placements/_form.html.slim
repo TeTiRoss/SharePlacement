@@ -1,0 +1,19 @@
+.row
+  .col-md-6.col-md-offset-3.col-sm-12
+    = simple_form_for @placement, html: { multipart: true } do |f|
+      = f.error_notification
+
+      = f.input :title
+      = f.input :address
+      = f.input :description
+      - if @placement.photos?
+        - @placement.photos.each do |photo|
+          = image_tag photo.url, size: '50',
+            class: 'img-thumbnail placement-img'
+      = f.input :photos, as: :file, input_html: { multiple: true }
+      = f.input :photos_cache, as: :hidden
+      = f.input :price
+
+      .btn-group
+        = f.button :submit, 'Add placement'
+        = link_to 'Cancel', placements_path, class: 'btn btn-danger'
