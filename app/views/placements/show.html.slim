@@ -10,6 +10,8 @@
         p 
           b Address: 
           = @placement.address
+        p
+          = render 'map', placement: @placement
         p 
           b Description: 
           = @placement.try(:description)
