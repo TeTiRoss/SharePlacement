@@ -1,5 +1,5 @@
 module PlacementHelper
-  def linkify_address(placement)
-    placement.address.gsub /\s+/, ','
+  def linkify_address(address)
+    address.gsub /\s+/, ','
   end
 end
