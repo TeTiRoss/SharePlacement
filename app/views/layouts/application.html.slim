@@ -24,7 +24,7 @@ html
               span.icon-bar
               span.icon-bar
           = link_to 'Share Placement', root_path, class: 'navbar-brand'
-        - if user_authorized?
+        - if current_user
           div.collapse.navbar-collapse id='bs-example-navbar-collapse-1'
             ul.nav.navbar-nav
               li = link_to 'Placements', placements_path
