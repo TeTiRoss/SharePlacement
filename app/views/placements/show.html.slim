@@ -9,7 +9,7 @@ p
   = render 'map', placement: @placement
 p 
   b Description: 
-  = @placement.description != '' ? @placement.description : 'No description'
+  = placement_description(@placement)
 p 
   b Price: 
   = @placement.price

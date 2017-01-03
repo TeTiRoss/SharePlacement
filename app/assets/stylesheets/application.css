@@ -24,10 +24,6 @@ abbr[title='required'] {
   display: none;
 }
 
-.register-link-div {
-  margin-top: 20px;
-}
-
 /* disable spin button for numbers input */
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -40,4 +36,16 @@ input[type=number]::-webkit-outer-spin-button {
 }
 #logout-btn:hover {
   color: rgb(221, 82, 82);
+}
+
+.register-link-div {
+  margin-top: 20px;
+}
+
+.brand-name-text {
+  color: rgb(15, 88, 43)
+}
+
+.welcome-div {
+  margin-top: 10px;
 }

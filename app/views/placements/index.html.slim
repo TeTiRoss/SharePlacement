@@ -1,6 +1,41 @@
-- if @placements.empty?
-  p No placements
-- else
-  - @placements.each do |placement|
-    = link_to placement.title, placement_path(placement)
-    br
+.jumbotron.welcome-div
+    h2 
+      | Welcome to 
+      span.brand-name-text Share Placement
+    p 
+      | On our webiste you can look for a hotel or other placement that you want
+      |  to visit and read other visitors reviews about that place. 
+    - if current_user
+      p 
+        | As a logged in user, you can add a 
+        = link_to ' new placement', new_placement_path,
+          data: { turbolinks: 'false' }
+        |  and leave comments about other placements.
+    - else 
+      p 
+        | You can also 
+        = link_to ' Log In', login_path
+        |  or
+        = link_to ' Register', new_user_path
+        |  to add a new placement, or to leave
+        |  your comment about place that you visited.
+hr
+
+.row
+  .col-lg-12
+    h3 Placements
+
+.row.text-center
+  - if @placements.empty?
+    p No placements
+  - else
+    - @placements.each do |placement|
+      .col-md-4.col-sm-6.placement-container
+        .thumbnail
+          = image_tag placement.photos.first.url, style: 'height: 100px;'
+          .caption
+            h3 = placement.title
+            p = placement_description(placement).truncate(80, separator: ' ')
+            p
+              = link_to 'More info', placement_path(placement), 
+                class: 'btn btn-default'
