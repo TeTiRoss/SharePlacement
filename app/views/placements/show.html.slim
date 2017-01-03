@@ -12,10 +12,10 @@ p
   = placement_description(@placement)
 p 
   b Price: 
-  = @placement.price
+  = number_to_currency(@placement.price)
 p 
   b Photos: 
   - @placement.photos.each do |photo|
     br
-    = image_tag photo.url, size: '200',
-      class: 'img-thumbnail placement-img'
+    = image_tag photo.url,
+      class: 'img-thumbnail placement-img text-center'

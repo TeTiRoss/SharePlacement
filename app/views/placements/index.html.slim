@@ -32,7 +32,7 @@ hr
     - @placements.each do |placement|
       .col-md-4.col-sm-6.placement-container
         .thumbnail
-          = image_tag placement.photos.first.url, style: 'height: 100px;'
+          = image_tag placement.photos.first.thumb.url
           .caption
             h3 = placement.title
             p = placement_description(placement).truncate(80, separator: ' ')

@@ -27,6 +27,7 @@ html
         - if current_user
           div.collapse.navbar-collapse id='bs-example-navbar-collapse-1'
             ul.nav.navbar-nav
+              li = link_to 'Placements', placements_path
               li = link_to 'Add placement', new_placement_path,
                      data: { turbolinks: 'false' }
             ul.nav.navbar-nav.navbar-right
