@@ -4,7 +4,7 @@
       = f.error_notification
 
       = f.input :title
-      = f.input :address
+      = f.input :address, placeholder: ''
       = f.input :description
       - if @placement.photos?
         - @placement.photos.each do |photo|
@@ -12,7 +12,7 @@
             class: 'img-thumbnail placement-img'
       = f.input :photos, as: :file, input_html: { multiple: true }
       = f.input :photos_cache, as: :hidden
-      = f.input :price
+      = f.input :price, label: 'Price ($)'
 
       .btn-group
         = f.button :submit, 'Add placement'

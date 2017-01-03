@@ -1,26 +1,21 @@
-.row
-  .col-md-6.col-md-offset-3.col-sm-12
-    .panel.panel-default
-      .panel-heading
-        | Placement details
-      .panel-body
-        p 
-          b Title: 
-          = @placement.title
-        p 
-          b Address: 
-          = @placement.address
-        p
-          = render 'map', placement: @placement
-        p 
-          b Description: 
-          = @placement.try(:description)
-        p 
-          b Price: 
-          = @placement.price
-        p 
-          b Photos: 
-          - @placement.photos.each do |photo|
-            br
-            = image_tag photo.url, size: '200',
-              class: 'img-thumbnail placement-img'
+h3 Placement details
+p 
+  b Title: 
+  = @placement.title
+p 
+  b Address: 
+  = @placement.address
+p
+  = render 'map', placement: @placement
+p 
+  b Description: 
+  = @placement.description != '' ? @placement.description : 'No description'
+p 
+  b Price: 
+  = @placement.price
+p 
+  b Photos: 
+  - @placement.photos.each do |photo|
+    br
+    = image_tag photo.url, size: '200',
+      class: 'img-thumbnail placement-img'

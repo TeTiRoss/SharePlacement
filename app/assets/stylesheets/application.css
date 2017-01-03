@@ -14,8 +14,9 @@
  *= require_self
  */
 
+/* for top navbar */
 body {
-  margin-top: 10px;
+  margin-top: 70px;
 }
 
 /* disable simple form required field asterisk */
@@ -27,12 +28,16 @@ abbr[title='required'] {
   margin-top: 20px;
 }
 
-.sidebar-btn {
-  margin: 3px;
-}
-
+/* disable spin button for numbers input */
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+#logout-btn {
+  color: rgb(145, 54, 54);
+}
+#logout-btn:hover {
+  color: rgb(221, 82, 82);
 }

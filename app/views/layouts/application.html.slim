@@ -8,18 +8,36 @@ html
       media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application',
       'data-turbolinks-track' => true
-    = javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDW3I_QRzckkyNfWkA9zE_Qz351Za8TU4U&libraries=places'
+    = javascript_include_tag 'https://maps.googleapis.com/maps/api'\
+      '/js?key=AIzaSyDW3I_QRzckkyNfWkA9zE_Qz351Za8TU4U&libraries=places'
     = csrf_meta_tags
 
   body
+    / Navigation
+    nav.navbar.navbar-inverse.navbar-fixed-top role='navigation'
+      div.container
+        div.navbar-header
+          button.navbar-toggle { type='button' 
+            data={toggle: 'collapse', target: '#bs-example-navbar-collapse-1'} }
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+          = link_to 'Share Placement', root_path, class: 'navbar-brand'
+        - if user_authorized?
+          div.collapse.navbar-collapse id='bs-example-navbar-collapse-1'
+            ul.nav.navbar-nav
+              li = link_to 'Placements', placements_path
+              li = link_to 'Add placement', new_placement_path,
+                     data: { turbolinks: 'false' }
+            ul.nav.navbar-nav.navbar-right
+              li = link_to 'Log Out', logout_path, method: :delete,
+                   id: 'logout-btn'
+    /  Content
     .container-fluid
       .row
-        .col-md-2
-          = render 'shared/sidebar_left'
-        .col-md-8
+        .col-md-8.col-md-offset-2
           .row
             .col-md-6.col-md-offset-3
               = bootstrap_flash
           = yield
-        .col-md-2
-          = render 'shared/sidebar_right'
