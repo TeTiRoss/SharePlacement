@@ -16,7 +16,7 @@ class PlacementsController < ApplicationController
   def create
     @placement = Placement.new(placement_params)
     if @placement.save
-      redirect_to placement_path(@placement), notice: 'New placement added'
+      redirect_to placement_path(@placement), notice: 'Placement added'
     else
       render :new
     end

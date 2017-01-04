@@ -22,7 +22,7 @@ gem 'simple_form'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'mini_magick'
 gem 'kaminari'
-gem "figaro"
+gem 'figaro'
 
 gem 'seed-fu', '~> 2.3'
 

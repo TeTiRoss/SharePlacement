@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_placement
-  
+
   skip_before_action :authenticate_user, only: [:index, :photos]
 
   def index
@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
     @review = @placement.reviews.new(review_params)
     @review.user = current_user
     if @review.save
-      redirect_to placement_path(@placement), notice: 'New review added'
+      redirect_to placement_path(@placement), notice: 'Review added'
     else
       render :new
     end
