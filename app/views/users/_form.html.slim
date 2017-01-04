@@ -1,13 +1,11 @@
-.row
-  .col-md-4.col-md-offset-4
-    = simple_form_for @user do |f|
-      = f.error_notification
+= simple_form_for @user do |f|
+  = f.error_notification
 
-      = f.input :name
-      = f.input :email
-      = f.input :password
-      = f.input :password_confirmation
+  = f.input :name
+  = f.input :email
+  = f.input :password
+  = f.input :password_confirmation
 
-      .btn-group
-        = f.button :submit, 'Sign Up'
-        = link_to 'Cancel', root_path, class: 'btn btn-danger'
+  .btn-group
+    = f.button :submit, 'Sign Up'
+    = link_to 'Cancel', root_path, class: 'btn btn-danger'
