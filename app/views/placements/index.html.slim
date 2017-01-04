@@ -20,11 +20,12 @@
         |  to add a new placement, or to leave
         |  your comment about place that you visited.
 hr
-	
+
+= render 'search_form'
+
 - if @placements.empty?
   p.text-center No placements
 - else
-  = render 'search_form'
   br
   - @placements.each do |placement|
     .row.placement-container
