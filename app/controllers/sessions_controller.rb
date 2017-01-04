@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
-
-  skip_before_action :authenticate_user
   before_action :check_signed_in, except: :destroy
+  
+  skip_before_action :authenticate_user
 
   def new
   end

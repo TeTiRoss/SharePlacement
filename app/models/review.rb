@@ -1,12 +1,12 @@
 class Review < ApplicationRecord
-  validates :title, :content, presence: true
-
   default_scope { order(created_at: :desc) }
-
-  mount_uploaders :photos, ReviewPhotoUploader
 
   belongs_to :user
   belongs_to :placement
 
+  validates :title, :content, presence: true
+
   delegate :name, to: :user, prefix: true
+
+  mount_uploaders :photos, ReviewPhotoUploader
 end

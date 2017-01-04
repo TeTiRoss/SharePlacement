@@ -1,9 +1,12 @@
 class PlacementsController < ApplicationController
-
   skip_before_action :authenticate_user, only: [:index, :show]
 
   def index
-    @placements = Placement.all.page params[:page]
+    if params[:search] && params[:commit] == 'Search'
+      @placements = Placement.search(params[:search][:title]).page params[:page]
+    else
+      @placements = Placement.all.page params[:page]
+    end
   end
 
   def new

@@ -1,0 +1,5 @@
+= simple_form_for :search, url: placements_path, method: :get do |f|
+  = f.input :title, label: false, placeholder: 'Search for a placement title'
+  .btn-group
+    = f.button :submit, 'Search', class: 'btn-success'
+    = f.button :submit, 'Reset'

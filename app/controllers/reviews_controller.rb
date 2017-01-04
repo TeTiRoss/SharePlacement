@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
-
-  skip_before_action :authenticate_user, only: [:index, :photos]
   before_action :set_placement
+  
+  skip_before_action :authenticate_user, only: [:index, :photos]
 
   def index
     @reviews = @placement.reviews.page params[:page]

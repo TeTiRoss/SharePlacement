@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
 
-  resources :users
+  resources :users, only: [:new, :create]
   resources :placements, only: [:index, :new, :create, :show] do
     resources :reviews, only: [:index, :new, :create] do
       get :photos, on: :member

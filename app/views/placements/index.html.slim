@@ -21,16 +21,20 @@
         |  your comment about place that you visited.
 hr
 
+= render 'search_form'
+br
+	
 - if @placements.empty?
   p.text-center No placements
 - else
   - @placements.each do |placement|
     .row.placement-container
       .col-md-7
-        = image_tag placement.photos.first.url, class: 'img-responsive'
+        = link_to placement_path(placement) do
+          = image_tag placement.photos.first.url, class: 'img-responsive img-rounded'
       .col-md-5
         h3 = placement.title
-        p = placement_description(placement).truncate(80, separator: ' ')
+        p = placement_description(placement).truncate(300, separator: ' ')
         p = link_to 'More info', placement_path(placement), 
             class: 'btn btn-default'
             
