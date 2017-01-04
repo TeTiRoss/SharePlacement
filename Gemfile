@@ -20,10 +20,10 @@ gem 'slim-rails'
 gem 'twitter-bootstrap-rails'
 gem 'simple_form'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'fog'
 gem 'mini_magick'
 gem 'kaminari'
 gem 'figaro'
-
 gem 'seed-fu', '~> 2.3'
 
 # Use jquery as the JavaScript library
