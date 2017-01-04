@@ -1,0 +1,18 @@
+- if current_user  
+  = link_to 'Add review', new_placement_review_path(@placement),
+    class: 'btn btn-default'
+hr
+- if @placement.reviews.empty?
+  h4.text-center No reviews
+- else 
+  - @placement.reviews.limit(review_limit).each do |review|            
+    .review-container
+      h3.review-title = review.title
+      - if review.photos.any?
+        = link_to 'review includes photos',
+          photos_placement_review_path(@placement, review),
+          class: 'btn btn-xs btn-info'
+      p = review.content
+      p
+        b => review.user_name
+        span.text-muted = review.created_at.strftime('%d-%m-%Y')

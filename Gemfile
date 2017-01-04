@@ -20,7 +20,8 @@ gem 'slim-rails'
 gem 'twitter-bootstrap-rails'
 gem 'simple_form'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
-gem "mini_magick"
+gem 'mini_magick'
+gem 'kaminari'
 
 gem 'seed-fu', '~> 2.3'
 

@@ -1,4 +1,4 @@
-class PlacementPhotoUploader < CarrierWave::Uploader::Base
+class ReviewPhotoUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick

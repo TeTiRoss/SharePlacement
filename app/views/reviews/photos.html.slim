@@ -1,0 +1,8 @@
+= link_to :back do
+  i.fa.fa-2x.fa-arrow-left
+br
+
+- @photos.each do |photo|
+  br
+  = image_tag photo.url,
+    class: 'img-thumbnail text-center'

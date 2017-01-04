@@ -1,8 +1,9 @@
 class PlacementsController < ApplicationController
+
   skip_before_action :authenticate_user, only: [:index, :show]
 
   def index
-    @placements = Placement.all
+    @placements = Placement.all.page params[:page]
   end
 
   def new
@@ -20,6 +21,7 @@ class PlacementsController < ApplicationController
 
   def show
     @placement = Placement.find(params[:id])
+    @review = Review.new
   end
 
   private

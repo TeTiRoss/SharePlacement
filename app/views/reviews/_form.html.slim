@@ -1,0 +1,15 @@
+= simple_form_for [@placement, @review], html: { multipart: true } do |f|
+  = f.error_notification
+  
+  = f.input :title
+  = f.input :content
+  - if @review.photos?
+    - @review.photos.each do |photo|
+      = image_tag photo.url, size: '50',
+        class: 'img-thumbnail'
+  = f.input :photos, as: :file, input_html: { multiple: true }
+  = f.input :photos_cache, as: :hidden
+
+  .btn-group
+    = f.button :submit, 'Add review'
+    = link_to 'Cancel', placement_path(@placement), class: 'btn btn-danger'

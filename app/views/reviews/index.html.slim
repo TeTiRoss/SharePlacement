@@ -1,0 +1,9 @@
+= link_to placement_path(@placement) do
+  i.fa.fa-2x.fa-arrow-left
+br
+
+h3 = @placement.title
+= render 'reviews/review', review_limit: nil     
+
+= paginate @reviews
+    

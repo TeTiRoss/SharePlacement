@@ -1,7 +1,8 @@
-h3 Placement details
-p 
-  b Title: 
-  = @placement.title
+= link_to placements_path do
+  i.fa.fa-2x.fa-arrow-left
+br
+
+h3 = @placement.title
 p 
   b Address: 
   = @placement.address
@@ -18,4 +19,12 @@ p
   - @placement.photos.each do |photo|
     br
     = image_tag photo.url,
-      class: 'img-thumbnail placement-img text-center'
+      class: 'img-thumbnail text-center'
+
+
+h2 Reviews
+= render 'reviews/review', review_limit: 5
+- if @placement.reviews.any?
+  = link_to 'See all reviews',
+    placement_reviews_path(@placement), class: 'btn btn-xs btn-default'
+  

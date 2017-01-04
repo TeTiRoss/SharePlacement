@@ -17,6 +17,7 @@
 /* for top navbar */
 body {
   margin-top: 70px;
+  margin-bottom: 10px;
 }
 
 /* disable simple form required field asterisk */
