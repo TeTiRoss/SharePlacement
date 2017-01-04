@@ -8,8 +8,8 @@ html
       media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application',
       'data-turbolinks-track' => true
-    = javascript_include_tag 'https://maps.googleapis.com/maps/api'\
-      '/js?key=AIzaSyDW3I_QRzckkyNfWkA9zE_Qz351Za8TU4U&libraries=places'
+    = javascript_include_tag "https://maps.googleapis.com/maps/api"\
+      "/js?key=#{ENV['google_maps_api']}&libraries=places"
     = csrf_meta_tags
 
   body
