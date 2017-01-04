@@ -4,7 +4,7 @@ class Placement < ApplicationRecord
   has_many :reviews, dependent: :destroy
 
   validates :title, :photos, :price, :address, presence: true
-  validates :title, :address, uniqueness: true
+  validates :address, uniqueness: true
 
   mount_uploaders :photos, PlacementPhotoUploader
 
