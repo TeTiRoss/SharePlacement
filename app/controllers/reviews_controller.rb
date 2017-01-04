@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
     @review = @placement.reviews.new(review_params)
     @review.user = current_user
     if @review.save
-      redirect_to placement_path(@placement), notice: 'You added review'
+      redirect_to placement_path(@placement), notice: 'New review added'
     else
       render :new
     end
