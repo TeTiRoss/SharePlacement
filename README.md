@@ -14,5 +14,3 @@ which is placed on the placement's page;
 * if the placement already exists in the app's database, the user can only leave
 comments about the placement, and add photos. User can not change, modify or
 remove placement's information;
-
-App hosted on https://share-placement.herokuapp.com
